@@ -1,0 +1,49 @@
+/* Container */
+.container {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Top Section */
+.top-section {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.column {
+  flex: 1; /* Equal width for both columns */
+  padding: 20px;
+  // text-align: center;
+}
+
+.left-column {
+  background-color: #e3f2fd; /* Light blue */
+}
+
+.right-column {
+  background-color: #fce4ec; /* Light pink */
+}
+
+/* Bottom Section */
+.bottom-section {
+  padding: 20px;
+  text-align: center;
+  background-color: #e8f5e9; /* Light green */
+}
+
+.container.team {
+  width: 15%;
+  float: left;
+}
+
+.container.select-team {
+  width: 50%;
+  float: right;
+}
+
+.container.container.select-team .mat-mdc-card-content {
+  width: 100%;
+}

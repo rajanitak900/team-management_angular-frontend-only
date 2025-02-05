@@ -1,0 +1,22 @@
+<form [formGroup]="teamForm">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Select Team</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select formControlName="teamName">
+          <mat-option *ngFor="let team of teamList" [value]="team.id">{{
+            team.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p>
+        selected Team Name:
+        {{ getTeamName(teamForm.get("teamName")?.value)?.name }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</form>

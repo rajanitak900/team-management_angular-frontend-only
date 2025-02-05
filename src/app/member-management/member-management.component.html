@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="top-section">
+    <div class="column left-column">
+      <div class="container mt-5 team">
+        <mat-card>
+          <button mat-raised-button color="primary" (click)="addTeamDialog()">
+            Add Team
+          </button>
+        </mat-card>
+      </div>
+      <div class="container mt-5 team">
+        <mat-card>
+          <button mat-raised-button color="primary" (click)="editTeamDialog()">
+            Edit Team
+          </button>
+        </mat-card>
+      </div>
+      <div class="container mt-5 team">
+        <mat-card>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="deleteTeamDialog()"
+          >
+            Delete Team
+          </button>
+        </mat-card>
+      </div>
+    </div>
+    <div class="column right-column">
+      <div class="container mt-5 select-team">
+        <app-select-team
+          [teams]="teams"
+          (selectedTeamEvent)="receiveMessage($event)"
+        ></app-select-team>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <app-member-list [selectedTeam]="selectedTeam"></app-member-list>
+  </div>
+</div>

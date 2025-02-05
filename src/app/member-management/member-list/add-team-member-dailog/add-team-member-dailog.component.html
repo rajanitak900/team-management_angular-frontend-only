@@ -1,0 +1,81 @@
+<h2 mat-dialog-title>{{ heading }}</h2>
+<form [formGroup]="memberForm">
+  <mat-dialog-content class="mat-typography">
+    <div class="form-container">
+      <mat-card>
+        <!-- <mat-card-title>Member Form</mat-card-title> -->
+        <mat-card-content>
+          <!-- First Name -->
+          <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              formControlName="firstName"
+              placeholder="Enter First Name"
+            />
+            <mat-error
+              *ngIf="memberForm.get('firstName')?.hasError('required')"
+            >
+              First Name is required.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Last Name -->
+          <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input
+              matInput
+              formControlName="lastName"
+              placeholder="Enter Last Name"
+            />
+            <mat-error *ngIf="memberForm.get('lastName')?.hasError('required')">
+              Last Name is required.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Email -->
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              placeholder="Enter Email"
+            />
+            <mat-error *ngIf="memberForm.get('email')?.hasError('required')">
+              Email is required.
+            </mat-error>
+            <mat-error *ngIf="memberForm.get('email')?.hasError('email')">
+              Invalid email address.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Username -->
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              formControlName="username"
+              placeholder="Enter Username"
+            />
+            <mat-error *ngIf="memberForm.get('username')?.hasError('required')">
+              Username is required.
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!memberForm.valid"
+      [mat-dialog-close]="memberForm.value"
+    >
+      Submit
+    </button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,21 @@
+.top-section {
+  display: flex;
+  width: 50%;
+  margin: 10px;
+}
+
+.top-section .left-column {
+  width: 15%;
+  float: left;
+}
+
+.mat-icon {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  padding: 2px;
+}
