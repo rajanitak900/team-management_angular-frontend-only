@@ -1,3 +1,7 @@
+1. Tech Stack : Angular(JavaScript), Angular Material, HTML, CSS
+2. backend is not developed here, only hardcoded values stored
+
+
 # TeamManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
